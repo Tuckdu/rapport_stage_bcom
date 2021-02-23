@@ -1,0 +1,45 @@
+\documentclass[12pt, openany]{report}
+
+\input{styles.tex}
+
+\begin{document}
+\selectlanguage{french}
+% Édite style sous-titre image et tableau
+\makeatletter
+\newcommand{\figcapfont}{\itshape} 
+\newcommand{\tabcapfont}{\itshape}
+\renewcommand{\fnum@figure}{\figcapfont Image \thefigure}
+\renewcommand{\fnum@table}{\tabcapfont Tableau \thetable}
+\makeatother
+
+\include{chapter/page_de_garde}
+
+% Actualise le compteur de page
+\clearpage
+\setcounter{page}{2}
+
+\include{chapter/remerciements}
+
+% \include{chapter/resume}
+
+% Renomme "Tables des matières" en "Sommaire"
+\renewcommand{\contentsname}{Sommaire}
+{\setlength{\parskip}{6pt}
+\tableofcontents
+}
+
+% \include{chapter/introduction}
+
+% \include{chapter/contexte}
+
+% \include{chapter/conclusion}
+
+\nocite{*}
+\bibliography{bibliographie}
+\bibliographystyle{plain}
+
+% \include{chapter/annexe}
+
+\end{document}
+
+
