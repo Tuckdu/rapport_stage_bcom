@@ -1,0 +1,137 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm,headheight=16pt]{geometry}
+\usepackage{libertine}
+\usepackage[pdftex]{graphicx}
+\usepackage{totpages}
+\usepackage[hidelinks]{hyperref}
+
+%package pour faire des graphs
+\usepackage{pgfplots}
+\pgfplotsset{width=7cm,compat=1.8}
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+% \pgfmathdeclarefunction{ease}{}{%
+%   \pgfmathparse{-(cos(pi*x)-1)/2}%
+% }
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[english, french]{babel}
+\usepackage{subcaption}
+
+\usepackage{setspace}
+\onehalfspacing
+
+% Change l'espacement entre deux paragraphes
+\setlength{\parskip}{18pt}
+
+% Liste à puces
+\frenchbsetup{StandardLists=true}
+
+% Édite style sous-titre figure et tableau
+\usepackage[font=it]{caption}
+
+% Change l'en-tête et le pied de page pour tout le document
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+\renewcommand{\headrulewidth}{0.5pt} 
+\fancyhead[L]{\bfseries\leftmark}
+\fancyhead[C]{}
+\fancyhead[R]{\rightmark}
+
+\renewcommand{\footrulewidth}{0.5pt}
+\fancyfoot[L]{\textbf{Tugdual Le Pen}}
+\fancyfoot[C]{}
+\fancyfoot[R]{\thepage\ / \ref{TotPages}}
+
+\fancypagestyle{plain}{ %
+    \fancyhf{} % remove everything
+
+    \renewcommand{\headrulewidth}{0pt} 
+    \renewcommand{\footrulewidth}{0.5pt}
+    \fancyfoot[L]{\textbf{Tugdual Le Pen}}
+    \fancyfoot[C]{}
+    \fancyfoot[R]{\thepage\ / \ref{TotPages}}
+}
+
+% Change le style des parties et sous partiess
+\usepackage[explicit]{titlesec}
+% change l'espacement au niveau du titre des chapitres
+\titlespacing*{\chapter}
+  {0pt}%  indent
+  {0pt}% space before
+  {12pt}% space after
+
+\titlespacing*{\section}
+  {0.6cm}%  indent
+  {0pt}% space before
+  {0pt}% space after
+
+% Définie les couleurs utilisées dans le rapport
+\usepackage{color}
+
+\definecolor{darkblue}{rgb}{0.11, 0.30, 0.66}
+\definecolor{lightblue}{rgb}{0.18, 0.42, 0.86}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{black}{rgb}{0.0,0.0,0.0}
+\definecolor{green}{rgb}{0.4, 0.8, 0.2}
+
+%% Style Chapitre
+% -------------------------------------------------------
+% Avec numéro
+\titleformat{\chapter}[hang] 
+    {\fontsize{24pt}{0pt}\selectfont \bfseries}
+    {\textcolor{darkblue} 
+    {\thechapter. #1}}
+    {0pt}
+    {\huge}
+
+% Sans numéro
+\titleformat{name=\chapter,numberless}[hang] 
+    {\fontsize{24pt}{0pt}\selectfont \bfseries}
+    {\textcolor{darkblue} 
+    {#1}}
+    {0pt}
+    {\huge}
+% -------------------------------------------------------
+
+%% Style Section
+% -------------------------------------------------------
+% Avec numéroté
+\titleformat{\section}[hang]
+    {\fontsize{16pt}{0pt}\selectfont \bfseries}
+    {\textcolor{lightblue} 
+    {\thesection.\ #1}}
+    {10pt}
+    {\Large}
+
+% Sans numéro
+\titleformat{name=\section,numberless}[display] 
+    {\fontsize{16pt}{0pt}\selectfont \bfseries}
+    {\textcolor{lightblue} 
+    {\thechapter.\thesection #1}}
+    {10pt}
+    {\Large}
+% -------------------------------------------------------
+
+% Numérotation des chapitre en chiffre Romain
+\renewcommand{\thechapter}{\Roman{chapter}}
+
+% Créer commande pour lien url
+\newcommand{\link}[1]{{\color{lightblue}\href{#1}{#1}}}
+\newcommand{\linkrename}[2]{{\color{lightblue}\href{#2}{#1}}}
+
+% Éviter les orphelin en début ou fin de page
+\widowpenalty=10000 
+\clubpenalty=10000 
+\raggedbottom
+
+% Nouvelle commande pour ajouter des commentaire sur le rapport
+\newcommand{\comment}[1]{\emph{\color{green} \% #1}}
+
