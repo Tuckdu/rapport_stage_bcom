@@ -82,21 +82,28 @@
 \definecolor{black}{rgb}{0.0,0.0,0.0}
 \definecolor{green}{rgb}{0.4, 0.8, 0.2}
 
+\definecolor{purple_bcom}{RGB}{190, 100, 255}
+\definecolor{blue_bcom}{RGB}{36, 210, 246}
+\definecolor{green_bcom}{RGB}{0, 205, 115}
+\definecolor{red_bcom}{RGB}{255, 79, 79}
+\definecolor{orange_bcom}{RGB}{255, 180, 0}
+
+
 %% Style Chapitre
 % -------------------------------------------------------
 % Avec numéro
 \titleformat{\chapter}[hang] 
     {\fontsize{24pt}{0pt}\selectfont \bfseries}
-    {\textcolor{darkblue} 
-    {\thechapter. #1}}
+    {\textcolor{red_bcom} 
+    {\thechapter. <#1>}}
     {0pt}
     {\huge}
 
 % Sans numéro
 \titleformat{name=\chapter,numberless}[hang] 
     {\fontsize{24pt}{0pt}\selectfont \bfseries}
-    {\textcolor{darkblue} 
-    {#1}}
+    {\textcolor{red_bcom} 
+    {<#1>}}
     {0pt}
     {\huge}
 % -------------------------------------------------------
@@ -106,16 +113,16 @@
 % Avec numéroté
 \titleformat{\section}[hang]
     {\fontsize{16pt}{0pt}\selectfont \bfseries}
-    {\textcolor{lightblue} 
-    {\thesection.\ #1}}
+    {\textcolor{orange_bcom} 
+    {\thesection.\ [#1]}}
     {10pt}
     {\Large}
 
 % Sans numéro
 \titleformat{name=\section,numberless}[display] 
     {\fontsize{16pt}{0pt}\selectfont \bfseries}
-    {\textcolor{lightblue} 
-    {\thechapter.\thesection #1}}
+    {\textcolor{orange_bcom} 
+    {\thechapter.\thesection [#1]}}
     {10pt}
     {\Large}
 % -------------------------------------------------------
@@ -124,14 +131,16 @@
 \renewcommand{\thechapter}{\Roman{chapter}}
 
 % Créer commande pour lien url
-\newcommand{\link}[1]{{\color{lightblue}\href{#1}{#1}}}
-\newcommand{\linkrename}[2]{{\color{lightblue}\href{#2}{#1}}}
+\newcommand{\link}[1]{{\color{green_bcom}\href{#1}{#1}}}
+\newcommand{\linkrename}[2]{{\color{green_bcom}\href{#2}{#1}}}
 
-% Éviter les orphelin en début ou fin de page
+% Éviter les orphelins en début ou fin de page
 \widowpenalty=10000 
 \clubpenalty=10000 
 \raggedbottom
 
-% Nouvelle commande pour ajouter des commentaire sur le rapport
-\newcommand{\comment}[1]{\emph{\color{green} \% #1}}
+% Nouvelle commande pour ajouter des commentaires sur le rapport
+\newcommand{\comment}[1]{\emph{\color{purple_bcom} \% #1}}
 
+% Commande emoji coeur
+\newcommand{\heart}{\ensuremath\heartsuit}
