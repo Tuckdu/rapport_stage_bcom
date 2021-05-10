@@ -132,7 +132,7 @@
 
 % Créer commande pour lien url
 \newcommand{\link}[1]{{\color{green_bcom}\href{#1}{#1}}}
-\newcommand{\linkrename}[2]{{\color{green_bcom}\href{#2}{#1}}}
+\newcommand{\linkrename}[2]{{\color{green_bcom}\href{#2}{#1}}} % #1 = rename ; #2 = link
 
 % Éviter les orphelins en début ou fin de page
 \widowpenalty=10000 
@@ -144,3 +144,14 @@
 
 % Commande emoji coeur
 \newcommand{\heart}{\ensuremath\heartsuit}
+
+% Commande pour ajouter une image
+\newcommand{\addimage}[3][0.5]{
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=#1\textwidth]
+                    {datas/#2}
+    \caption{#3}
+    \label{#2}
+\end{figure}
+} % #1 = Image size (default = 0.5) ; #2 = Image name & label ; #3 = Caption
