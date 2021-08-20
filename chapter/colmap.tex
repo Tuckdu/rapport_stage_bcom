@@ -1,16 +1,20 @@
 \chapter{Prototypage et intégration de Colmap}
 
-Introduction
+Introduction (travail d'analyse de colmap pour pouvoir l'intégrer)
 
 \section{Présentation de colmap}
 
 Explication pipeline colmap (SFM + MVS)
 
-Explication multi threading / CUDA 
+\addimage[0.95]{pipeline_sfm.png}{Pipeline du SFM}
+
+\addimage[0.3]{pipeline_mvs.png}{Pipeline du MVS}
+
+Explication multi threading / CUDA (permet d'accélerer le processus, introduit maintenant pour pouvoir en parler par la suite dans la partie intégration)
 
 \section{Intégration}
 
-Intégration (difficultés rencontrées, ...)
+Intégration (transition build cmake vs conan, pas de possibilité d'utiliser CUDA, problèmes avec les nombreuses librairies, ...)
 
 Transition prochaine partie (partie analyse de colmap pour comprendre les entrées et sorties)
 
