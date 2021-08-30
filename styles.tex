@@ -73,6 +73,11 @@
   {0pt}% space before
   {0pt}% space after
 
+\titlespacing*{\subsection}
+  {1.2cm}%  indent
+  {0pt}% space before
+  {0pt}% space after
+
 % Définie les couleurs utilisées dans le rapport
 \usepackage{color}
 
@@ -123,6 +128,25 @@
     {\fontsize{16pt}{0pt}\selectfont \bfseries}
     {\textcolor{orange_bcom} 
     {\thechapter.\thesection \{#1\}}}
+    {10pt}
+    {\Large}
+% -------------------------------------------------------
+
+%% Style Subsection
+% -------------------------------------------------------
+% Avec numéroté
+\titleformat{\subsection}[hang]
+    {\fontsize{16pt}{0pt}\selectfont \bfseries}
+    {\textcolor{black} 
+    {\thesubsection.\ [#1]}}
+    {10pt}
+    {\Large}
+
+% Sans numéro
+\titleformat{name=\subsection,numberless}[display] 
+    {\fontsize{16pt}{0pt}\selectfont \bfseries}
+    {\textcolor{black} 
+    {\thesubsection.\ [#1]}}
     {10pt}
     {\Large}
 % -------------------------------------------------------
